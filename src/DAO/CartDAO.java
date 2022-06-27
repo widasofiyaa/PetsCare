@@ -63,9 +63,11 @@ public class CartDAO implements DAOInterface<CartProduk>{
             statement.setInt(1, idUser);
             ResultSet rs = statement.executeQuery();
             while(rs.next()){
-                CartProduk cartProduk = new CartProduk(rs.getInt("id_product"),rs.getInt("harga"));
+                CartProduk cartProduk = new CartProduk(rs.getInt("id"),rs.getInt("id_product"),rs.getInt("harga"));
+                cartProduk.setId(rs.getInt("id"));
                 cartProduk.setIdUser(rs.getInt("id_pembeli"));
                 cartProduk.setIdProduk(rs.getInt("id_product"));
+                cartProduk.setHarga(rs.getInt("harga"));
                 list.add(cartProduk);
             }
         } catch (Exception e) {

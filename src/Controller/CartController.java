@@ -35,7 +35,7 @@ public class CartController {
         produkDAO = new ProdukDAO(idUser);
         orderDAO = new OrderDAO(idUser);
         cartDAO = new CartDAO(idUser);
-        header = new String []{"id","Nama","Harga"};
+        header = new String []{"id","Produk","Harga"};
     } 
     
     public void renderTable() {

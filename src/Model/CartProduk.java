@@ -22,6 +22,12 @@ public class CartProduk {
     private User user;
     private List<CartProduk> cekProdukList;
 
+    public CartProduk(int aInt, int aInt0, int aInt1) {
+        this.id = id;
+        this.idProduk = idProduk;
+        this.harga = harga;
+    }
+
     public User getUser() {
         return user;
     }
