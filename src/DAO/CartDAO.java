@@ -28,11 +28,11 @@ public class CartDAO implements DAOInterface<CartProduk>{
     public void insert(CartProduk object) {
         PreparedStatement statement = null;
         try {
-            statement = connection.prepareStatement("INSERT INTO `cart` (`id`,`id_pembeli`,`id_product`,`total`) VALUES (NULL, ?, ?, ?)");
+            statement = connection.prepareStatement("INSERT INTO `cart` (`id`,`id_pembeli`,`id_product`,`harga`) VALUES (NULL, ?, ?, ?)");
             statement.setInt(1, idUser);
             statement.setInt(2, object.getIdProduk());
             //statement.setInt(3, object.getKuantiti());
-            statement.setInt(4, object.getHarga());
+            statement.setInt(3, object.getHarga());
             statement.executeUpdate();
             statement.close();
         } catch (Exception e) {
